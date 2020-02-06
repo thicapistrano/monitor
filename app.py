@@ -38,7 +38,10 @@ def telegram_bot_sendtext(bot_message):
 
     return response.json()
 
-schedule.every(1).minutes.do(check_site_availability)
+schedule.every(10).minutes.do(check_site_availability)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
     
 
 if __name__ == '__main__':
