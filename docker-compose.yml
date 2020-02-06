@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  backend:
+    image: backend
+    environment:
+      VERSION: '1.0-beta'
+      TOKEN_TELEGRAM: ''
+      CHAT_ID_TELEGRAM: ''
+    build: . 
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000/tcp
