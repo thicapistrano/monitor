@@ -12,6 +12,5 @@ Com esses passo o servidor já estará rodando na porta 5000 da sua máquina.
 
 # Dependencies
 
-    Flask []
+    Flask [https://palletsprojects.com/p/flask/]
     Schedule [https://pypi.org/project/schedule/]
-    Telegram []

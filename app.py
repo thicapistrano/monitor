@@ -5,11 +5,7 @@ import os
 import time
 import schedule
 
-DOMAINS = ['http://capistrano.net.br',
-    'http://zetecauto.com.br',
-    'http://blogueirinhastore.com',
-    'http://beabaweb.com.br',
-    'http://rrsegurancaltr.com.br']
+DOMAINS = ['https://google.com.br','https://www.amazon.com/']
 
 app = Flask(__name__)
 
@@ -28,17 +24,18 @@ def check_site_availability():
             print(domain + " - " + str(response.status_code))
             telegram_bot_sendtext("o site " + domain + " está fora do ar.")
 
+
 def telegram_bot_sendtext(bot_message):
     
     bot_token = os.environ['TOKEN_TELEGRAM']
     bot_chatID = os.environ['CHAT_ID_TELEGRAM']
-    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+    send_text = os.environ['URL_TELEGRAM'] + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     response = requests.get(send_text)
 
     return response.json()
 
-schedule.every(10).minutes.do(check_site_availability)
+schedule.every(1).minutes.do(check_site_availability)
 while True:
     schedule.run_pending()
     time.sleep(1)

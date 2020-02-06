@@ -5,6 +5,7 @@ services:
     image: backend
     environment:
       VERSION: '1.0-beta'
+      URL_TELEGRAM: 'https://api.telegram.org/bot'
       TOKEN_TELEGRAM: ''
       CHAT_ID_TELEGRAM: ''
     build: . 
