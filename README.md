@@ -10,6 +10,11 @@ In line 8 of the app.py file, you must enter the domains you want to monitor, in
         
     DOMAINS = ['https://google.com.br','https://www.amazon.com/']
 
+In the docker-compose.yml file you must insert the token and telegram group id
+     
+    TOKEN_TELEGRAM: ''
+    CHAT_ID_TELEGRAM: ''
+
 # How to run
 
 To execute this code just run these two commands:
