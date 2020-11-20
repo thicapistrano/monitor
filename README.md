@@ -1,14 +1,19 @@
 # Backend - Python
 
+# Configuration
 
-# Como rodar
+In line 8 of the app.py file, you must enter the domains you want to monitor, in the example below are google and amazon, you can add as many more as you want
+        
+    DOMAINS = ['https://google.com.br','https://www.amazon.com/']
 
-Para executar esse código basta rodar esses dois comandos:
+# How to run
+
+To execute this code just run these two commands:
 
     docker-compose build
     docker-compose up -d
 
-Com esses passo o servidor já estará rodando na porta 5000 da sua máquina.
+With these steps the server will already be running on port 5000 on your machine.
 
 # Dependencies
 
